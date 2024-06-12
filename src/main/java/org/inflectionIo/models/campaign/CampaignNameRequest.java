@@ -10,6 +10,10 @@ public class CampaignNameRequest {
         this.campaignName = campaignName;
     }
 
+    public static CampaignNameRequestBuilder builder() {
+        return new CampaignNameRequestBuilder();
+    }
+
     public String getCampaignName() {
         return campaignName;
     }
@@ -31,5 +35,36 @@ public class CampaignNameRequest {
         return Objects.hashCode(campaignName);
     }
 
+    @Override
+    public String toString() {
+        return "CampaignNameRequest{" +
+                "campaignName='" + campaignName + '\'' +
+                '}';
+    }
+
+    public static class CampaignNameRequestBuilder {
+
+        private String campaignName;
+
+        CampaignNameRequestBuilder() {
+        }
+
+
+        public CampaignNameRequestBuilder campaignName(String campaignName) {
+            this.campaignName = campaignName;
+            return this;
+        }
+
+        public CampaignNameRequest build() {
+            return new CampaignNameRequest(this.campaignName);
+        }
+
+        @Override
+        public String toString() {
+            return "CampaignNameRequest.CampaignNameRequestBuilder{" +
+                    "campaignName='" + campaignName + '\'' +
+                    '}';
+        }
+    }
 
 }

@@ -42,5 +42,18 @@ public class RequestSpecification {
                 .build();
     }
 
+    public io.restassured.specification.RequestSpecification getRequestSpecification(Map<String, String> headers,
+                                                                                     Map<String, String> pathParams,
+                                                                                     String path,
+                                                                                     String requestBody) {
+        return new RequestSpecBuilder()
+                .setBaseUri(url)
+                .addHeaders(headers)
+                .addPathParams(pathParams)
+                .setBasePath(path)
+                .setBody(requestBody)
+                .build();
+    }
+
 
 }

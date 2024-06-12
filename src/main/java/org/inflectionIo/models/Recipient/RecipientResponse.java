@@ -7,9 +7,7 @@ public class RecipientResponse {
     private String email;
     private String id;
 
-    public RecipientResponse(String email) {
-        this.email = email;
-    }
+    public RecipientResponse() {}
 
     public String getId() {
         return id;

@@ -18,6 +18,8 @@ public class CampaignResponse {
         this.scheduledTime = scheduledTime;
     }
 
+    public CampaignResponse(){}
+
     public String getCampaignName() {
         return campaignName;
     }

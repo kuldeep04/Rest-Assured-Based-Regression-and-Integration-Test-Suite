@@ -9,6 +9,8 @@ public class RecipientListResponse {
     private String name;
     private List<RecipientResponse> recipients;
 
+    public RecipientListResponse() {}
+
     public String getName() {
         return name;
     }

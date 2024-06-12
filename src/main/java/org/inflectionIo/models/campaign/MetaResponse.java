@@ -1,26 +1,25 @@
 package org.inflectionIo.models.campaign;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class MetaResponse {
 
-    private ResponseStatus[] status;
-    private Integer timestamp;
+    private String status;
+    private String timestamp;
 
-    public ResponseStatus[] getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(ResponseStatus[] status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public Integer getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -34,11 +33,9 @@ public class MetaResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(Arrays.hashCode(status), timestamp);
+        return Objects.hash(status, timestamp);
     }
 
-    public MetaResponse(ResponseStatus[] status) {
-        this.status = status;
-    }
+    public MetaResponse() {}
 
 }

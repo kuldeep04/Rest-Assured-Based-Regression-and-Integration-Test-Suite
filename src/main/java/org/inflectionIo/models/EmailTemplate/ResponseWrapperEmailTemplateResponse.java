@@ -1,18 +1,20 @@
-package org.inflectionIo.models.Recipient;
+package org.inflectionIo.models.EmailTemplate;
 
 import org.inflectionIo.models.campaign.ErrorResponse;
 import org.inflectionIo.models.campaign.MetaResponse;
 import org.inflectionIo.models.campaign.PaginationResponse;
+
 import java.util.List;
 
-public class ResponseWrapperListRecipientListResponse {
+public class ResponseWrapperEmailTemplateResponse {
 
-    private List<RecipientListResponse> data;
+    private EmailTemplateResponse data;
     private PaginationResponse pagination;
-    private ErrorResponse errors;
-    public MetaResponse meta;
+    private List<ErrorResponse> errors;
+    private MetaResponse meta;
 
-    public ResponseWrapperListRecipientListResponse(){}
+    public ResponseWrapperEmailTemplateResponse() {
+    }
 
     public PaginationResponse getPagination() {
         return pagination;
@@ -22,19 +24,19 @@ public class ResponseWrapperListRecipientListResponse {
         this.pagination = pagination;
     }
 
-    public List<RecipientListResponse> getData() {
+    public EmailTemplateResponse getData() {
         return data;
     }
 
-    public void setData(List<RecipientListResponse> data) {
+    public void setData(EmailTemplateResponse data) {
         this.data = data;
     }
 
-    public ErrorResponse getErrors() {
+    public List<ErrorResponse> getErrors() {
         return errors;
     }
 
-    public void setErrors(ErrorResponse errors) {
+    public void setError(List<ErrorResponse> errors) {
         this.errors = errors;
     }
 
@@ -45,5 +47,4 @@ public class ResponseWrapperListRecipientListResponse {
     public void setMeta(MetaResponse meta) {
         this.meta = meta;
     }
-
 }

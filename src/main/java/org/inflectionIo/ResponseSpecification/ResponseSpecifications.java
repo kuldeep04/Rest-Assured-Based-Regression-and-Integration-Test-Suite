@@ -8,6 +8,7 @@ public class ResponseSpecifications {
 
     public io.restassured.specification.ResponseSpecification getResponseSpecification() {
         return new ResponseSpecBuilder()
-                .expectStatusCode(200).build();
+                .expectStatusCode(200)
+                .build();
     }
 }
