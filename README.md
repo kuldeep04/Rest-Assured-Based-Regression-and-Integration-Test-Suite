@@ -1,10 +1,10 @@
 # inflectionIo
 inflectionIo Interview Project
 
-Test plan link: https://github.com/kuldeep04/inflectionIo/blob/main/Marketing%20Campaign%20Scheduling%20-%20Test%20Plan.pdf
+Test plan link: `https://github.com/kuldeep04/inflectionIo/blob/main/Marketing%20Campaign%20Scheduling%20-%20Test%20Plan.pdf`
 
 Prerequisite:
-Java 
+Java and 
 Maven
 
 To Run:
