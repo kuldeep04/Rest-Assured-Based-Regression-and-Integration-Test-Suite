@@ -9,9 +9,4 @@
             <class name="integrationTest.CampaignTest"/>
         </classes>
     </test>
-    <test name="Inflection-io end-2-end Tests">
-        <classes>
-         <!--   <class name="a"/>-->
-        </classes>
-    </test>
 </suite>

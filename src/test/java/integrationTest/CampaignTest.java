@@ -155,7 +155,6 @@ public class CampaignTest {
     @Test(dataProviderClass = TestDataProviders.class, dataProvider = "updateCampaignName")
     public void updateCampaignNameTest(String campaignName, String campaignId) throws JsonProcessingException {
         Response response = campaignService.updateCampaignName(campaignName, campaignId);
-        response.getBody().print();
         ResponseWrapperCampaignResponse responseWrapperCampaignResponse = mapper.readValue(response.getBody().asString(), ResponseWrapperCampaignResponse.class);
         Assert.assertEquals(response.getStatusCode(), 200);
         Assert.assertNotNull(responseWrapperCampaignResponse.getData());
