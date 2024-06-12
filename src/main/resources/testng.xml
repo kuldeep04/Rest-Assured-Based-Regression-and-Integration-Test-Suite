@@ -2,10 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Inflection-io" parallel="tests" thread-count="1" verbose="3"
        configfailurepolicy="continue">
-    <test name="Inflection-io Tests">
+    <test name="Inflection-io integration Tests">
         <classes>
             <class name="integrationTest.EmailTemplateTest"/>
             <class name="integrationTest.RecipientsListTest"/>
+            <class name="integrationTest.CampaignTest"/>
+        </classes>
+    </test>
+    <test name="Inflection-io end-2-end Tests">
+        <classes>
+         <!--   <class name="a"/>-->
         </classes>
     </test>
 </suite>

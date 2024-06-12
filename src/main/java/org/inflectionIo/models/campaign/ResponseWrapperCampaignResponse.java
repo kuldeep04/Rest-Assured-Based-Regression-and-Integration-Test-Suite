@@ -1,12 +1,13 @@
 package org.inflectionIo.models.campaign;
 
+import java.util.List;
 import java.util.Objects;
 
 public class ResponseWrapperCampaignResponse {
 
     private CampaignResponse data;
     private PaginationResponse pagination;
-    private ErrorResponse errors;
+    private List<ErrorResponse> errors;
     private MetaResponse meta;
 
     public CampaignResponse getData() {
@@ -25,11 +26,11 @@ public class ResponseWrapperCampaignResponse {
         this.pagination = pagination;
     }
 
-    public ErrorResponse getErrors() {
+    public List<ErrorResponse> getErrors() {
         return errors;
     }
 
-    public void setErrors(ErrorResponse errors) {
+    public void setErrors(List<ErrorResponse> errors) {
         this.errors = errors;
     }
 

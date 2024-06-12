@@ -1,14 +1,14 @@
 package org.inflectionIo.campaignService;
 
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.inflectionIo.RequestionSpecification.RequestSpecification;
 import org.inflectionIo.models.campaign.CampaignNameRequest;
 import org.inflectionIo.models.campaign.CampaignRequest;
-
 import java.util.HashMap;
 import java.util.Map;
 import static org.inflectionIo.constants.Constants.campaignBaseUrl;
-import static org.inflectionIo.utils.Utils.serializeObject;
+import static org.inflectionIo.utils.TestUtils.serializeObject;
 
 public class CampaignService {
 
@@ -28,8 +28,8 @@ public class CampaignService {
                 .recipientListId(recipientListId)
                 .scheduledTime(scheduledId)
                 .build();
-        return requestSpecification.getRequestSpecification(headers, "campaigns",
-                        serializeObject(campaignRequest))
+        return RestAssured.given().spec(requestSpecification.getRequestSpecification(headers, "campaigns",
+                        serializeObject(campaignRequest)))
                 .when().post();
     }
 
@@ -39,9 +39,9 @@ public class CampaignService {
         pathParams.put("campaignId", campaignId);
         headers.put("Content-Type", "application/json");
         CampaignNameRequest campaignNameRequest = CampaignNameRequest.builder().campaignName(campaignName).build();
-        return requestSpecification.getRequestSpecification(headers, pathParams, "campaigns/{campaignId}/name",
-                        serializeObject(campaignNameRequest))
-                .when().post();
+        return RestAssured.given().spec(requestSpecification.getRequestSpecification(headers, pathParams, "campaigns/{campaignId}/name",
+                        serializeObject(campaignNameRequest)))
+                .when().patch();
     }
 
     public Response getCampaignById(String campaignId) {
@@ -49,7 +49,7 @@ public class CampaignService {
         headers.put("Accept", "application/json");
         Map<String, String> pathParams = new HashMap<>();
         pathParams.put("campaignId", campaignId);
-        return requestSpecification.getRequestSpecification(headers, "campaigns/{campaignId}", pathParams)
+        return RestAssured.given().spec(requestSpecification.getRequestSpecification(headers, "campaigns/{campaignId}", pathParams))
                 .when().get();
     }
 

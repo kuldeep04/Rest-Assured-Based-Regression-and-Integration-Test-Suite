@@ -10,7 +10,7 @@ To Run:
 1. clone repo
 2. `cd` to root directory of project and run `mvn clean compile` 
 3. once the compilation is successful 
-4. Run mvn `clean compile integrationTest`
+4. Run mvn `clean compile integration Test`
 
 
 

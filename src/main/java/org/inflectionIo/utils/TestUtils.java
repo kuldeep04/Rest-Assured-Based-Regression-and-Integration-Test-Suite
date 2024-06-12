@@ -6,9 +6,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 
-public class Utils {
+import static org.inflectionIo.utils.TestUtils.getDateAndTime;
+
+public class TestUtils {
 
     public static String serializeObject(Object object) {
         try {
@@ -20,10 +21,12 @@ public class Utils {
         return null;
     }
 
-    public static String convertToTimeZone(LocalDateTime dateTime, String zoneId) {
-        ZoneId zone = ZoneId.of(zoneId);
+    public static int getDateAndTime(LocalDateTime dateTime) {
+        if (dateTime == null) {
+            return 0;
+        }
+        ZoneId zone = ZoneId.of("UTC");
         ZonedDateTime zonedDateTime = dateTime.atZone(zone);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-        return zonedDateTime.format(formatter);
+        return (int) zonedDateTime.toEpochSecond();
     }
 }
