@@ -16,8 +16,8 @@ services:
     image: 'inflectionengineering/demo-campaign-scheduling:latest'
     environment:
       - 'MONGO_URI=root:root@host.docker.internal:27017/campaign-scheduling?authSource=admin'
-      - 'EMAIL_TEMPLATES_URL=<REPLACE WITH URL>'
-      - 'RECIPIENT_LISTS_URL=<REPLACE WITH URL>'
+      - 'EMAIL_TEMPLATES_URL=http://localhost:7071/'
+      - 'RECIPIENT_LISTS_URL=http://localhost:7072/'
     ports:
       - '127.0.0.1:7070:7070'
 

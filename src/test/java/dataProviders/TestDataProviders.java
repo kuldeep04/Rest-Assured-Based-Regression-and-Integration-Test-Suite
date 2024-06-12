@@ -9,12 +9,22 @@ public class TestDataProviders {
 
     @DataProvider(name = "emailTemplate")
     public static Object[][] emailTemplate() {
-        return new Object[][]{{"EM-001"},{"EM-002"}, {"EM-003"}, {"EM-004"}, {"EM-005"}};
+        return new Object[][]{{"EM-001"},{"EM-002"}, {"EM-003"}, {"EM-004"}};
+    }
+
+    @DataProvider(name = "emailTemplateWithInvalidId")
+    public static Object[][] emailTemplateWithInvalidId() {
+        return new Object[][]{{"EM-002452"}};
     }
 
     @DataProvider(name = "recipientList")
     public static Object[][] recipientList() {
-        return new Object[][]{{"RL-001"},{"RL-002"}, {"RL-005"}};
+        return new Object[][]{{"RL-001"},{"RL-002"}};
+    }
+
+    @DataProvider(name = "recipientInvalidId")
+    public static Object[][] recipientInvalidId() {
+        return new Object[][]{{"RL-37632"}};
     }
 
     @DataProvider(name = "createCampaignValidData")
