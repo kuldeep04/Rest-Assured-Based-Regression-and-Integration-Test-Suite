@@ -1,5 +1,5 @@
-# inflectionIo
-inflectionIo Interview Project
+# Learning 
+Test Project
 
 Test plan link: `Marketing Campaign Scheduling - Test Plan.pdf` on root of the project
 
